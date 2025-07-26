@@ -2,20 +2,26 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  trailingSlash: true,
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002/api',
   },
   images: {
     domains: ['localhost', 'res.cloudinary.com'],
+    unoptimized: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/:path*`,
-      },
-    ];
-  },
+  // Enable static export for Netlify
+  output: 'export',
+  distDir: 'out',
+  // Remove rewrites for static export
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/:path*',
+  //       destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002/api'}/:path*`,
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;
