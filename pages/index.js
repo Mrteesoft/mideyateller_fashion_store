@@ -17,6 +17,7 @@ export default function Home() {
   });
   const [contactLoading, setContactLoading] = useState(false);
   const [contactMessage, setContactMessage] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Enhanced Typewriter effect
   const [isDeleting, setIsDeleting] = useState(false);
@@ -180,7 +181,10 @@ export default function Home() {
   if (loading) {
     return (
       <div className={styles.container}>
-        <div className={styles.loading}>Loading...</div>
+        <div className={styles.loading}>
+          <div className={styles.loadingSpinner}></div>
+          <p>Loading Mideyateller Fashion Store...</p>
+        </div>
       </div>
     );
   }
@@ -191,14 +195,25 @@ export default function Home() {
       <nav className={styles.navigation}>
         <div className={styles.nav}>
           <a href="#" className={styles.logo}>Mideyateller</a>
-          <ul className={styles.navLinks}>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#collections">Collections</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#custom">Custom</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+          {/* Mobile Menu Button */}
+          <button
+            className={styles.mobileMenuBtn}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle mobile menu"
+          >
+            <span className={mobileMenuOpen ? styles.hamburgerOpen : styles.hamburger}></span>
+          </button>
+
+          {/* Navigation Links */}
+          <ul className={`${styles.navLinks} ${mobileMenuOpen ? styles.navLinksOpen : ''}`}>
+            <li><a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
+            <li><a href="#collections" onClick={() => setMobileMenuOpen(false)}>Collections</a></li>
+            <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a></li>
+            <li><a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a></li>
+            <li><a href="#custom" onClick={() => setMobileMenuOpen(false)}>Custom</a></li>
+            <li><a href="#testimonials" onClick={() => setMobileMenuOpen(false)}>Reviews</a></li>
+            <li><a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -240,7 +255,7 @@ export default function Home() {
                 <div className={styles.slideCard}>
                   <div className={styles.slideImageContainer}>
                     <img
-                      src={product.image || product.images?.[0]?.url || '/images/placeholder.svg'}
+                      src={product.image || '/images/placeholder.svg'}
                       alt={product.name}
                       className={styles.slideImage}
                     />

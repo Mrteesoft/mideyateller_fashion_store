@@ -1,6 +1,6 @@
 [build]
   # Build command for Next.js
-  command = "npm run build && npm run export"
+  command = "npm run build"
 
   # Directory to publish (Next.js static export)
   publish = "out"
