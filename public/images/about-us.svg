@@ -1,0 +1,49 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="fashionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#4ecdc4;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#aboutGradient)"/>
+  
+  <!-- Fashion studio scene -->
+  <!-- Mannequins -->
+  <ellipse cx="200" cy="450" rx="15" ry="8" fill="rgba(255,255,255,0.1)"/>
+  <rect x="195" y="350" width="10" height="100" fill="rgba(255,255,255,0.2)"/>
+  <path d="M180 200 Q200 180 220 200 L215 300 Q200 280 185 300 Z" fill="url(#fashionGradient)" opacity="0.7"/>
+  
+  <ellipse cx="400" cy="450" rx="15" ry="8" fill="rgba(255,255,255,0.1)"/>
+  <rect x="395" y="350" width="10" height="100" fill="rgba(255,255,255,0.2)"/>
+  <path d="M380 210 Q400 190 420 210 L415 310 Q400 290 385 310 Z" fill="url(#fashionGradient)" opacity="0.6"/>
+  
+  <ellipse cx="600" cy="450" rx="15" ry="8" fill="rgba(255,255,255,0.1)"/>
+  <rect x="595" y="350" width="10" height="100" fill="rgba(255,255,255,0.2)"/>
+  <path d="M580 205 Q600 185 620 205 L615 305 Q600 285 585 305 Z" fill="url(#fashionGradient)" opacity="0.8"/>
+  
+  <!-- Design elements -->
+  <circle cx="150" cy="150" r="3" fill="white" opacity="0.6"/>
+  <circle cx="650" cy="180" r="4" fill="white" opacity="0.5"/>
+  <circle cx="100" cy="300" r="2" fill="white" opacity="0.7"/>
+  <circle cx="700" cy="320" r="3" fill="white" opacity="0.4"/>
+  
+  <!-- Fashion tools -->
+  <path d="M50 100 L70 120 M50 120 L70 100" stroke="white" stroke-width="2" opacity="0.3"/>
+  <rect x="45" y="130" width="30" height="2" fill="white" opacity="0.3"/>
+  
+  <circle cx="750" cy="100" r="8" fill="none" stroke="white" stroke-width="1" opacity="0.4"/>
+  <path d="M742 100 L758 100 M750 92 L750 108" stroke="white" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Text overlay -->
+  <text x="400" y="500" font-family="Playfair Display, serif" font-size="32" fill="white" text-anchor="middle" font-weight="700">Our Atelier</text>
+  <text x="400" y="530" font-family="Inter, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle">Where Fashion Dreams Come to Life</text>
+  
+  <!-- Decorative elements -->
+  <path d="M100 50 Q400 30 700 50" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+  <path d="M100 550 Q400 570 700 550" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+</svg>

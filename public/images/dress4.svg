@@ -1,0 +1,26 @@
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dress4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dressShape4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#dress4Gradient)"/>
+
+  <!-- Dress silhouette -->
+  <path d="M155 105 Q200 80 245 105 L240 185 Q200 165 160 185 Z" fill="url(#dressShape4)" opacity="0.8"/>
+  <path d="M160 185 Q200 205 240 185 L230 330 Q200 310 170 330 Z" fill="url(#dressShape4)" opacity="0.7"/>
+  <path d="M170 330 Q200 355 230 330 L220 465 Q200 445 180 465 Z" fill="url(#dressShape4)" opacity="0.6"/>
+
+  <!-- Elegant details -->
+  <circle cx="200" cy="130" r="5" fill="white" opacity="0.3"/>
+  <path d="M180 200 L220 200 M180 220 L220 220 M180 240 L220 240" stroke="white" stroke-width="0.5" opacity="0.4"/>
+  <polygon points="195,300 200,290 205,300" fill="white" opacity="0.5"/>
+
+  <text x="200" y="520" font-family="Playfair Display, serif" font-size="18" fill="white" text-anchor="middle" font-weight="600">Midnight Sapphire</text>
+  <text x="200" y="545" font-family="Inter, sans-serif" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">Formal Dress</text>
+</svg>

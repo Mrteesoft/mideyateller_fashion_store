@@ -1,0 +1,101 @@
+<svg width="1200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2d2d2d;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="overlayGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#f093fb;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:0.3" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="400" fill="url(#coverGradient)"/>
+  <rect width="1200" height="400" fill="url(#overlayGradient)"/>
+  
+  <!-- Elegant dress silhouettes -->
+  <g transform="translate(200,200)" opacity="0.6">
+    <!-- Dress 1 -->
+    <path d="M-40 -120 Q0 -140 40 -120 L35 -30 Q0 -40 -35 -30 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <path d="M-35 -30 Q0 -20 35 -30 L30 80 Q0 70 -30 80 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <path d="M-30 80 Q0 100 30 80 L25 160 Q0 150 -25 160 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </g>
+  
+  <g transform="translate(600,200)" opacity="0.4">
+    <!-- Dress 2 -->
+    <path d="M-50 -130 Q0 -150 50 -130 L45 -20 Q0 -35 -45 -20 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <path d="M-45 -20 Q0 -10 45 -20 L40 90 Q0 75 -40 90 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <path d="M-40 90 Q0 110 40 90 L35 170 Q0 160 -35 170 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  </g>
+  
+  <g transform="translate(1000,200)" opacity="0.5">
+    <!-- Dress 3 -->
+    <path d="M-45 -125 Q0 -145 45 -125 L40 -25 Q0 -35 -40 -25 Z" fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+    <path d="M-40 -25 Q0 -15 40 -25 L35 85 Q0 70 -35 85 Z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+    <path d="M-35 85 Q0 105 35 85 L30 165 Q0 155 -30 165 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="2" fill="rgba(255,255,255,0.3)" filter="url(#glow)"/>
+  <circle cx="1100" cy="300" r="3" fill="rgba(255,255,255,0.2)" filter="url(#glow)"/>
+  <circle cx="300" cy="350" r="1.5" fill="rgba(255,255,255,0.4)" filter="url(#glow)"/>
+  <circle cx="900" cy="80" r="2.5" fill="rgba(255,255,255,0.25)" filter="url(#glow)"/>
+  
+  <!-- Flowing lines -->
+  <path d="M0 150 Q300 130 600 150 Q900 170 1200 150" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+  <path d="M0 250 Q400 230 800 250 Q1000 270 1200 250" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+  
+  <!-- Central content area -->
+  <g transform="translate(600,200)">
+    <!-- Main title -->
+    <text x="0" y="-60" font-family="Playfair Display, serif" font-size="48" fill="white" text-anchor="middle" font-weight="700" filter="url(#glow)">
+      Curated Collections
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="-20" font-family="Inter, sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-weight="300">
+      Discover Timeless Elegance
+    </text>
+    
+    <!-- Decorative line -->
+    <line x1="-80" y1="10" x2="80" y2="10" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <circle cx="-80" cy="10" r="3" fill="rgba(255,255,255,0.4)"/>
+    <circle cx="80" cy="10" r="3" fill="rgba(255,255,255,0.4)"/>
+    
+    <!-- Description -->
+    <text x="0" y="40" font-family="Inter, sans-serif" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+      Each piece carefully crafted to embody sophistication and grace
+    </text>
+  </g>
+  
+  <!-- Corner ornaments -->
+  <g transform="translate(50,50)" opacity="0.3">
+    <path d="M0 0 Q20 0 20 20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M0 40 Q20 40 20 20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(1150,50)" opacity="0.3">
+    <path d="M0 0 Q-20 0 -20 20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M0 40 Q-20 40 -20 20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(50,350)" opacity="0.3">
+    <path d="M0 0 Q20 0 20 -20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M0 -40 Q20 -40 20 -20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(1150,350)" opacity="0.3">
+    <path d="M0 0 Q-20 0 -20 -20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+    <path d="M0 -40 Q-20 -40 -20 -20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none"/>
+  </g>
+</svg>

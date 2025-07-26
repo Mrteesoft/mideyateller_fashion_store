@@ -1,0 +1,26 @@
+<svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dress1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dressShape1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ee5a52;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="600" fill="url(#dress1Gradient)"/>
+
+  <!-- Dress silhouette -->
+  <path d="M150 100 Q200 80 250 100 L240 200 Q200 180 160 200 Z" fill="url(#dressShape1)" opacity="0.8"/>
+  <path d="M160 200 Q200 220 240 200 L230 350 Q200 330 170 350 Z" fill="url(#dressShape1)" opacity="0.7"/>
+  <path d="M170 350 Q200 380 230 350 L220 480 Q200 460 180 480 Z" fill="url(#dressShape1)" opacity="0.6"/>
+
+  <!-- Fashion elements -->
+  <circle cx="180" cy="150" r="3" fill="white" opacity="0.6"/>
+  <circle cx="220" cy="150" r="3" fill="white" opacity="0.6"/>
+  <circle cx="200" cy="180" r="2" fill="white" opacity="0.4"/>
+
+  <text x="200" y="520" font-family="Playfair Display, serif" font-size="18" fill="white" text-anchor="middle" font-weight="600">Crimson Elegance</text>
+  <text x="200" y="545" font-family="Inter, sans-serif" font-size="14" fill="rgba(255,255,255,0.7)" text-anchor="middle">Evening Dress</text>
+</svg>

@@ -1,0 +1,11 @@
+This directory contains placeholder images for the fashion store.
+
+Required images:
+- hero.jpg (1920x1080) - Hero section background
+- dress1.jpg (400x600) - Featured dress 1
+- dress2.jpg (400x600) - Featured dress 2  
+- dress3.jpg (400x600) - Featured dress 3
+- dress4.jpg (400x600) - Featured dress 4
+- custom-dress.jpg (800x600) - Custom made section image
+
+You can replace these with your actual fashion images.

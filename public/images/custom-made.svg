@@ -1,0 +1,65 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="customGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dressCustom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#f093fb;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#customGradient)"/>
+  
+  <!-- Custom dress design -->
+  <g transform="translate(400,300)">
+    <!-- Dress body -->
+    <path d="M-80 -150 Q0 -180 80 -150 L70 -50 Q0 -70 -70 -50 Z" fill="url(#dressCustom)" opacity="0.8"/>
+    <path d="M-70 -50 Q0 -30 70 -50 L60 100 Q0 80 -60 100 Z" fill="url(#dressCustom)" opacity="0.7"/>
+    <path d="M-60 100 Q0 130 60 100 L50 220 Q0 200 -50 220 Z" fill="url(#dressCustom)" opacity="0.6"/>
+    
+    <!-- Design details -->
+    <circle cx="0" cy="-100" r="8" fill="white" opacity="0.4"/>
+    <path d="M-30 -20 Q0 -40 30 -20" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M-25 20 Q0 0 25 20" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M-20 60 Q0 40 20 60" stroke="white" stroke-width="2" fill="none" opacity="0.5"/>
+    
+    <!-- Embellishments -->
+    <circle cx="-20" cy="-80" r="2" fill="white" opacity="0.6"/>
+    <circle cx="20" cy="-80" r="2" fill="white" opacity="0.6"/>
+    <circle cx="0" cy="-60" r="1.5" fill="white" opacity="0.5"/>
+  </g>
+  
+  <!-- Design tools around -->
+  <g transform="translate(150,200)">
+    <!-- Measuring tape -->
+    <path d="M0 0 Q20 -10 40 0 Q60 10 80 0" stroke="rgba(255,255,255,0.4)" stroke-width="3" fill="none"/>
+    <rect x="10" y="-2" width="8" height="4" fill="rgba(255,255,255,0.3)"/>
+    <rect x="30" y="-2" width="8" height="4" fill="rgba(255,255,255,0.3)"/>
+    <rect x="50" y="-2" width="8" height="4" fill="rgba(255,255,255,0.3)"/>
+  </g>
+  
+  <g transform="translate(650,150)">
+    <!-- Scissors -->
+    <circle cx="0" cy="0" r="8" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <circle cx="15" cy="0" r="8" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <path d="M8 0 L22 0" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+    <path d="M0 -8 L15 8 M15 -8 L0 8" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  </g>
+  
+  <!-- Fabric swatches -->
+  <rect x="100" y="400" width="30" height="30" fill="rgba(255,107,107,0.6)" rx="3"/>
+  <rect x="140" y="400" width="30" height="30" fill="rgba(78,205,196,0.6)" rx="3"/>
+  <rect x="180" y="400" width="30" height="30" fill="rgba(240,147,251,0.6)" rx="3"/>
+  
+  <!-- Text -->
+  <text x="400" y="520" font-family="Playfair Display, serif" font-size="28" fill="white" text-anchor="middle" font-weight="700">Bespoke Creation</text>
+  <text x="400" y="550" font-family="Inter, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle">Tailored to Your Vision</text>
+  
+  <!-- Decorative elements -->
+  <path d="M50 50 Q400 30 750 50" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+  <circle cx="100" cy="100" r="2" fill="white" opacity="0.3"/>
+  <circle cx="700" cy="400" r="3" fill="white" opacity="0.2"/>
+  <circle cx="50" cy="500" r="1.5" fill="white" opacity="0.4"/>
+</svg>
