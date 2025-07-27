@@ -1358,7 +1358,7 @@
   }
 
   .hero {
-    height: 85vh;
+    height: 100vh;
     padding: 2rem;
   }
 
@@ -1383,7 +1383,7 @@
   }
 
   .hero {
-    height: 80vh;
+    height: 100vh;
     padding: 1.5rem;
   }
 
@@ -1519,7 +1519,7 @@
   }
 
   .hero {
-    height: 75vh;
+    height: 100vh;
     padding: 1rem;
     text-align: center;
   }
@@ -1707,7 +1707,7 @@
   }
 
   .hero {
-    height: 70vh;
+    height: 100vh;
     padding: 0.5rem;
   }
 
@@ -1875,6 +1875,24 @@
   .footerSection p {
     font-size: 0.9rem;
   }
+
+  /* Extra small mobile preloader adjustments */
+  .loadingText h2 {
+    font-size: 1.8rem;
+  }
+
+  .dressIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .preloader {
+    gap: 1.5rem;
+  }
+
+  .progressBar {
+    width: 120px;
+  }
 }
 
 /* Footer */
@@ -1945,6 +1963,11 @@
 
 /* Mobile Performance & UX Improvements */
 @media (max-width: 768px) {
+  /* Hide carousel cover image on mobile */
+  .carouselCover {
+    display: none;
+  }
+
   /* Improve text readability on mobile */
   .heroContent h1,
   .sectionTitle {
@@ -1992,32 +2015,193 @@
     align-items: center;
     justify-content: center;
   }
+
+  /* Mobile Preloader Adjustments */
+  .loadingText h2 {
+    font-size: 2rem;
+  }
+
+  .loadingText p {
+    font-size: 0.9rem;
+  }
+
+  .dressIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .progressBar {
+    width: 150px;
+  }
 }
 
-/* Loading state improvements */
-.loading {
+/* Advanced Fashion Preloader */
+.preloaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-size: 1.2rem;
-  color: #c2185b;
-  gap: 1rem;
+  z-index: 9999;
+  overflow: hidden;
 }
 
-.loadingSpinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #c2185b;
+.preloaderContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.fashionLoader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dressIcon {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.dressSvg {
+  width: 100%;
+  height: 100%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.dressPath {
+  fill: none;
+  stroke: #c2185b;
+  stroke-width: 2;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawDress 2s ease-in-out infinite;
+}
+
+.dressHead {
+  fill: #c2185b;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.loadingDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loadingDots span {
+  width: 8px;
+  height: 8px;
+  background: #c2185b;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: bounce 1.4s ease-in-out infinite both;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.loadingDots span:nth-child(1) { animation-delay: -0.32s; }
+.loadingDots span:nth-child(2) { animation-delay: -0.16s; }
+.loadingDots span:nth-child(3) { animation-delay: 0s; }
+
+.loadingText h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.loadingText p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #c2185b;
+  font-weight: 300;
+  letter-spacing: 1px;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+.progressBar {
+  width: 200px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #c2185b, #e91e63, #c2185b);
+  border-radius: 2px;
+  animation: progress 3s ease-in-out infinite;
+}
+
+/* Preloader Animations */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes drawDress {
+  0% { stroke-dashoffset: 200; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -200; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(194, 24, 91, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(194, 24, 91, 0.8), 0 0 30px rgba(194, 24, 91, 0.6); }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
 }
 
 

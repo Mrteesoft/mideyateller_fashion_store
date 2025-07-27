@@ -180,10 +180,30 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className={styles.container}>
-        <div className={styles.loading}>
-          <div className={styles.loadingSpinner}></div>
-          <p>Loading Mideyateller Fashion Store...</p>
+      <div className={styles.preloaderContainer}>
+        <div className={styles.preloader}>
+          {/* Advanced Fashion-themed Preloader */}
+          <div className={styles.fashionLoader}>
+            <div className={styles.dressIcon}>
+              <svg viewBox="0 0 100 100" className={styles.dressSvg}>
+                <path d="M30 20 L35 15 L65 15 L70 20 L75 30 L75 85 L25 85 L25 30 Z"
+                      className={styles.dressPath} />
+                <circle cx="50" cy="12" r="8" className={styles.dressHead} />
+              </svg>
+            </div>
+            <div className={styles.loadingDots}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div className={styles.loadingText}>
+            <h2>Mideyateller</h2>
+            <p>Crafting Elegance...</p>
+          </div>
+          <div className={styles.progressBar}>
+            <div className={styles.progressFill}></div>
+          </div>
         </div>
       </div>
     );
