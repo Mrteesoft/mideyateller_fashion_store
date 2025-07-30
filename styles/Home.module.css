@@ -1113,39 +1113,30 @@
   transform: translateY(-2px);
 }
 
-/* Brand Graphic Styles */
-.brandGraphic {
-  margin-top: 2rem;
+
+
+.customImageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.9;
-  transition: all 0.3s ease;
+  position: relative;
 }
 
-.brandGraphicImage {
-  max-width: 200px;
+.customImage {
   width: 100%;
+  max-width: 500px;
   height: auto;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  filter: brightness(1) contrast(1.05);
-}
-
-.brandGraphic:hover .brandGraphicImage {
-  transform: scale(1.02);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   filter: brightness(1.05) contrast(1.1);
 }
 
-.custom img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 0;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+.customImageContainer:hover .customImage {
+  transform: scale(1.03) translateY(-5px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.1) contrast(1.15);
 }
 
 /* Testimonials Section */
@@ -1493,11 +1484,16 @@
     text-align: center;
   }
 
-  .aboutImage,
-  .customImage {
+  .aboutImage {
     order: -1;
     max-width: 400px;
     margin: 0 auto;
+  }
+
+  .customImageContainer {
+    order: -1;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
   }
 
   .customText {
@@ -2124,17 +2120,18 @@
     width: 150px;
   }
 
-  /* Mobile Logo & Brand Graphic */
+  /* Mobile Logo & Custom Image */
   .logoImage {
     height: 35px;
   }
 
-  .brandGraphicImage {
-    max-width: 150px;
+  .customImage {
+    max-width: 300px;
+    border-radius: 15px;
   }
 
-  .brandGraphic {
-    margin-top: 1.5rem;
+  .customImageContainer {
+    margin-top: 2rem;
   }
 }
 

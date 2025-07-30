@@ -434,12 +434,9 @@ export default function Home() {
               <li>Lifetime alterations</li>
             </ul>
             <button className={styles.customButton}>Start Your Design</button>
-            <div className={styles.brandGraphic}>
-              <img src="/images/graphic.jpeg" alt="Mideyateller Brand Graphic" className={styles.brandGraphicImage} />
-            </div>
           </div>
-          <div>
-            <img src="/images/custom-made.svg" alt="Custom made dress showcase" />
+          <div className={styles.customImageContainer}>
+            <img src="/images/graphic.jpeg" alt="Mideyateller Brand Graphic" className={styles.customImage} />
           </div>
         </div>
       </section>
