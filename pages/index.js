@@ -466,10 +466,10 @@ export default function Home() {
           </div>
           <div className={styles.testimonialCard}>
             <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-            <p>"The styling consultation changed my entire wardrobe. Now I feel confident and elegant every day."</p>
+            <p>"I got a lot of compliments on my clothes, your hands are really blessed. Thank you for styling me, I couldn't have wished for another brand to trust my dress with, cheers to more"</p>
             <div className={styles.testimonialAuthor}>
-              <strong>Maria Rodriguez</strong>
-              <span>Business Executive</span>
+              <strong>Oluwanifemi Adewakun</strong>
+              <span>Satisfied Customer</span>
             </div>
           </div>
         </div>
@@ -558,9 +558,9 @@ export default function Home() {
           </div>
           <div className={styles.footerSection}>
             <h4>Contact Info</h4>
-            <p>Email: hello@mideyateller.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
-            <p>Address: 123 Fashion Ave, Style City</p>
+            <p>Email: info@mideyateller.com</p>
+            <p>Phone: +2349164638685</p>
+            <p>Address: No 1 Fashion Ave, Abeokuta Ogun state</p>
           </div>
         </div>
         <div className={styles.footerBottom}>

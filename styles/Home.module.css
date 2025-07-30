@@ -466,19 +466,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 30px;
-  padding: 4rem;
-  box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.8),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(20px);
 }
 
 .aboutLogo {
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -486,6 +481,8 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 2;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 .logoGlow {
@@ -503,11 +500,7 @@
 }
 
 .logoShowcase:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow:
-    0 35px 70px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.9),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-5px) scale(1.05);
 }
 
 .logoShowcase:hover .logoGlow {
@@ -516,7 +509,8 @@
 
 .logoShowcase:hover .aboutLogo {
   filter: brightness(1.15) contrast(1.25);
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
 /* Services Section */
@@ -1550,12 +1544,12 @@
   }
 
   .logoShowcase {
-    padding: 3rem;
-    border-radius: 25px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .aboutLogo {
-    max-width: 250px;
+    max-width: 300px;
   }
 
   .customImageContainer {
@@ -2055,12 +2049,12 @@
   }
 
   .logoShowcase {
-    padding: 1.5rem;
-    border-radius: 15px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .aboutLogo {
-    max-width: 150px;
+    max-width: 200px;
   }
 }
 
@@ -2224,12 +2218,12 @@
   }
 
   .logoShowcase {
-    padding: 2rem;
-    border-radius: 20px;
+    padding: 0;
+    border-radius: 0;
   }
 
   .aboutLogo {
-    max-width: 200px;
+    max-width: 250px;
   }
 }
 
