@@ -5,9 +5,24 @@
 .container {
   min-height: 100vh;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fafafa;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
   color: #1a1a1a;
   line-height: 1.6;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(194, 24, 91, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(233, 30, 99, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Navigation */
@@ -17,11 +32,12 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 1rem 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .nav {
@@ -33,12 +49,27 @@
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logoImage {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: brightness(1) contrast(1.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo:hover .logoImage {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .navLinks {
@@ -58,15 +89,19 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.75rem 1.5rem;
   display: block;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
 }
 
 .navLinks a:hover {
-  color: #1a1a1a;
+  color: #c2185b;
   transform: translateY(-2px);
+  background: rgba(194, 24, 91, 0.08);
+  box-shadow: 0 4px 15px rgba(194, 24, 91, 0.2);
 }
 
 .navLinks a::after {
@@ -76,13 +111,14 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #1a1a1a, #666);
-  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #c2185b, #e91e63);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
+  border-radius: 1px;
 }
 
 .navLinks a:hover::after {
-  width: 100%;
+  width: 80%;
 }
 
 /* Mobile Menu Button */
@@ -148,7 +184,7 @@
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -157,6 +193,18 @@
   color: white;
   position: relative;
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(194, 24, 91, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(233, 30, 99, 0.08) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .hero::before {
@@ -184,24 +232,27 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -2px;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 50%, #e8e8e8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
 .typewriter {
   font-size: clamp(1.2rem, 3vw, 2rem);
   margin-bottom: 3rem;
   min-height: 3rem;
-  color: #e0e0e0;
+  color: #e8e8e8;
   font-weight: 300;
   letter-spacing: 1px;
-  animation: fadeInUp 1s ease-out 0.5s both;
+  animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
 }
 
 .cursor {
@@ -335,6 +386,18 @@
 .about {
   padding: 120px 2rem;
   background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(194, 24, 91, 0.2) 50%, transparent 100%);
 }
 
 .aboutContent {
@@ -1048,6 +1111,33 @@
 .customButton:hover {
   background: #333;
   transform: translateY(-2px);
+}
+
+/* Brand Graphic Styles */
+.brandGraphic {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.brandGraphicImage {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  filter: brightness(1) contrast(1.05);
+}
+
+.brandGraphic:hover .brandGraphicImage {
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05) contrast(1.1);
 }
 
 .custom img {
@@ -2032,6 +2122,19 @@
 
   .progressBar {
     width: 150px;
+  }
+
+  /* Mobile Logo & Brand Graphic */
+  .logoImage {
+    height: 35px;
+  }
+
+  .brandGraphicImage {
+    max-width: 150px;
+  }
+
+  .brandGraphic {
+    margin-top: 1.5rem;
   }
 }
 

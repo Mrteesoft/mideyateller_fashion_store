@@ -214,7 +214,9 @@ export default function Home() {
       {/* NAVIGATION */}
       <nav className={styles.navigation}>
         <div className={styles.nav}>
-          <a href="#" className={styles.logo}>Mideyateller</a>
+          <a href="#" className={styles.logo}>
+            <img src="/images/logo.jpeg" alt="Mideyateller Fashion Store" className={styles.logoImage} />
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -432,6 +434,9 @@ export default function Home() {
               <li>Lifetime alterations</li>
             </ul>
             <button className={styles.customButton}>Start Your Design</button>
+            <div className={styles.brandGraphic}>
+              <img src="/images/graphic.jpeg" alt="Mideyateller Brand Graphic" className={styles.brandGraphicImage} />
+            </div>
           </div>
           <div>
             <img src="/images/custom-made.svg" alt="Custom made dress showcase" />
