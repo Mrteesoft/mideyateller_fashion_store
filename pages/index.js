@@ -385,8 +385,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.aboutImage}>
-            <img src="/images/about-us.svg" alt="About Mideyateller" />
+          <div className={styles.aboutLogoContainer}>
+            <div className={styles.logoShowcase}>
+              <img src="/images/logo.jpeg" alt="Mideyateller Logo" className={styles.aboutLogo} />
+              <div className={styles.logoGlow}></div>
+            </div>
           </div>
         </div>
       </section>
