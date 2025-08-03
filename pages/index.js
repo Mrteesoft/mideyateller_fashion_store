@@ -19,6 +19,7 @@ export default function Home() {
   const [contactLoading, setContactLoading] = useState(false);
   const [contactMessage, setContactMessage] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
 
   // Enhanced Typewriter effect
   const [isDeleting, setIsDeleting] = useState(false);
@@ -153,6 +154,13 @@ export default function Home() {
     };
 
     loadData();
+
+    // Page preloader
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Handle contact form submission
@@ -205,6 +213,55 @@ export default function Home() {
           <div className={styles.progressBar}>
             <div className={styles.progressFill}></div>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Modern Preloader Component
+  if (pageLoading) {
+    return (
+      <div className={styles.modernPreloader}>
+        <div className={styles.preloaderContent}>
+          <div className={styles.logoContainer}>
+            <svg className={styles.preloaderLogo} viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="preloaderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#c2185b" />
+                  <stop offset="100%" stopColor="#e91e63" />
+                </linearGradient>
+              </defs>
+              {/* Elegant M */}
+              <path className={styles.logoPath} d="M8 32V8h4l6 16 6-16h4v24h-3V14l-5 14h-2l-5-14v18H8z" fill="url(#preloaderGradient)" />
+              {/* Stylized A */}
+              <path className={styles.logoPath} d="M38 32l8-24h3l8 24h-3l-1.5-4.5h-9l-1.5 4.5h-3zm5.5-7h7l-3.5-10.5L42.5 25z" fill="url(#preloaderGradient)" />
+              {/* Fashion needle accent */}
+              <circle className={styles.logoAccent} cx="65" cy="20" r="2" fill="url(#preloaderGradient)" />
+              <path className={styles.logoAccent} d="M65 18v4M63 20h4" stroke="url(#preloaderGradient)" strokeWidth="1.5" strokeLinecap="round" />
+              {/* Brand text */}
+              <text className={styles.logoText} x="75" y="16" fontSize="8" fontFamily="serif" fontWeight="600" fill="#333">MideAtelier</text>
+              <text className={styles.logoSubtext} x="75" y="26" fontSize="5" fontFamily="sans-serif" fontWeight="400" fill="#666">Fashion Studio</text>
+            </svg>
+          </div>
+          <div className={styles.loadingText}>
+            <h2>MideAtelier</h2>
+            <p>Crafting Elegance</p>
+          </div>
+          <div className={styles.modernProgressBar}>
+            <div className={styles.progressTrack}>
+              <div className={styles.progressFill}></div>
+            </div>
+          </div>
+          <div className={styles.loadingDots}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div className={styles.preloaderBackground}>
+          <div className={styles.gradientOrb1}></div>
+          <div className={styles.gradientOrb2}></div>
+          <div className={styles.gradientOrb3}></div>
         </div>
       </div>
     );
@@ -419,7 +476,7 @@ export default function Home() {
       <section id="services" className={styles.services}>
         <div className={styles.servicesContainer}>
           <div className={styles.servicesHeader}>
-            <h2>Our Premium Services</h2>
+            <h2>Our Services</h2>
             <p>Discover our comprehensive range of fashion services designed to elevate your style</p>
           </div>
 
