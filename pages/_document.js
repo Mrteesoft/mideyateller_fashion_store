@@ -10,22 +10,22 @@ export default function Document() {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Mideyateller" />
-        
+        <meta name="apple-mobile-web-app-title" content="MideAtelier" />
+
         {/* SEO Meta Tags */}
-        <meta name="description" content="Mideyateller Fashion Store - Professional, world-class fashion designs with bespoke tailoring services. Discover elegant dresses and sophisticated fashion in Nigeria." />
+        <meta name="description" content="MideAtelier Fashion Store - Professional, world-class fashion designs with bespoke tailoring services. Discover elegant dresses and sophisticated fashion in Nigeria." />
         <meta name="keywords" content="fashion, dresses, bespoke, tailoring, Nigeria, elegant, sophisticated, custom made" />
-        <meta name="author" content="Mideyateller Fashion Store" />
-        
+        <meta name="author" content="MideAtelier Fashion Store" />
+
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Mideyateller Fashion Store" />
+        <meta property="og:title" content="MideAtelier Fashion Store" />
         <meta property="og:description" content="Professional, world-class fashion designs with bespoke tailoring services" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Mideyateller" />
-        
+        <meta property="og:site_name" content="MideAtelier" />
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mideyateller Fashion Store" />
+        <meta name="twitter:title" content="MideAtelier Fashion Store" />
         <meta name="twitter:description" content="Professional, world-class fashion designs with bespoke tailoring services" />
         
         {/* Favicon and Icons */}

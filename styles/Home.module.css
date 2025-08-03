@@ -56,20 +56,16 @@
   position: relative;
 }
 
-.logoImage {
-  height: 45px;
+.logoIcon {
+  height: 40px;
   width: auto;
-  object-fit: contain;
-  transition: all 0.3s ease;
-  filter: brightness(1) contrast(1.1);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-.logo:hover .logoImage {
-  transform: scale(1.05);
-  filter: brightness(1.1) contrast(1.2);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+.logo:hover .logoIcon {
+  transform: scale(1.05) translateY(-1px);
+  filter: drop-shadow(0 4px 8px rgba(194, 24, 91, 0.2));
 }
 
 .navLinks {
@@ -2198,7 +2194,7 @@
   }
 
   /* Mobile Logo & Custom Image */
-  .logoImage {
+  .logoIcon {
     height: 35px;
   }
 

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import apiClient from '../lib/api';
 
@@ -198,7 +199,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.loadingText}>
-            <h2>Mideyateller</h2>
+            <h2>MideAtelier</h2>
             <p>Crafting Elegance...</p>
           </div>
           <div className={styles.progressBar}>
@@ -210,12 +211,33 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <>
+      <Head>
+        <title>MideAtelier - Elegant Fashion Studio</title>
+      </Head>
+      <div className={styles.container}>
       {/* NAVIGATION */}
       <nav className={styles.navigation}>
         <div className={styles.nav}>
           <a href="#" className={styles.logo}>
-            <img src="/images/logo.jpeg" alt="Mideyateller Fashion Store" className={styles.logoImage} />
+            <svg className={styles.logoIcon} viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#c2185b" />
+                  <stop offset="100%" stopColor="#e91e63" />
+                </linearGradient>
+              </defs>
+              {/* Elegant M */}
+              <path d="M8 32V8h4l6 16 6-16h4v24h-3V14l-5 14h-2l-5-14v18H8z" fill="url(#logoGradient)" />
+              {/* Stylized A */}
+              <path d="M38 32l8-24h3l8 24h-3l-1.5-4.5h-9l-1.5 4.5h-3zm5.5-7h7l-3.5-10.5L42.5 25z" fill="url(#logoGradient)" />
+              {/* Fashion needle accent */}
+              <circle cx="65" cy="20" r="2" fill="url(#logoGradient)" />
+              <path d="M65 18v4M63 20h4" stroke="url(#logoGradient)" strokeWidth="1.5" strokeLinecap="round" />
+              {/* Brand text */}
+              <text x="75" y="16" fontSize="8" fontFamily="serif" fontWeight="600" fill="#333">MideAtelier</text>
+              <text x="75" y="26" fontSize="5" fontFamily="sans-serif" fontWeight="400" fill="#666">Fashion Studio</text>
+            </svg>
           </a>
 
           {/* Mobile Menu Button */}
@@ -368,7 +390,7 @@ export default function Home() {
         <div className={styles.aboutContent}>
           <div className={styles.aboutText}>
             <h2>Our Story</h2>
-            <p>Founded in 2020, Mideyateller represents the pinnacle of contemporary fashion design. We believe that every woman deserves to feel extraordinary, and our mission is to create pieces that celebrate individuality while maintaining timeless elegance.</p>
+            <p>Founded in 2020, MideAtelier represents the pinnacle of contemporary fashion design. We believe that every woman deserves to feel extraordinary, and our mission is to create pieces that celebrate individuality while maintaining timeless elegance.</p>
             <p>Our team of expert designers and craftspeople work tirelessly to ensure each garment meets our exacting standards of quality, fit, and style. From concept to creation, every piece tells a story of passion, precision, and artistry.</p>
             <div className={styles.stats}>
               <div className={styles.stat}>
@@ -387,7 +409,7 @@ export default function Home() {
           </div>
           <div className={styles.aboutLogoContainer}>
             <div className={styles.logoShowcase}>
-              <img src="/images/logo.jpeg" alt="Mideyateller Logo" className={styles.aboutLogo} />
+              <img src="/images/logo.jpeg" alt="MideAtelier Logo" className={styles.aboutLogo} />
               <div className={styles.logoGlow}></div>
             </div>
           </div>
@@ -439,7 +461,7 @@ export default function Home() {
             <button className={styles.customButton}>Start Your Design</button>
           </div>
           <div className={styles.customImageContainer}>
-            <img src="/images/graphic.jpeg" alt="Mideyateller Brand Graphic" className={styles.customImage} />
+            <img src="/images/graphic.jpeg" alt="MideAtelier Brand Graphic" className={styles.customImage} />
           </div>
         </div>
       </section>
@@ -529,10 +551,10 @@ export default function Home() {
               <a href={socialLinks.whatsapp?.url || "https://wa.me/1234567890"} target="_blank" rel="noopener noreferrer">
                 WhatsApp
               </a>
-              <a href={socialLinks.twitter?.url || "https://twitter.com/mideyateller"} target="_blank" rel="noopener noreferrer">
+              <a href={socialLinks.twitter?.url || "https://twitter.com/mideatelier"} target="_blank" rel="noopener noreferrer">
                 Twitter
               </a>
-              <a href={socialLinks.instagram?.url || "https://instagram.com/mideyateller"} target="_blank" rel="noopener noreferrer">
+              <a href={socialLinks.instagram?.url || "https://instagram.com/mideatelier"} target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
             </div>
@@ -544,7 +566,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
-            <h3>Mideyateller</h3>
+            <h3>MideAtelier</h3>
             <p>Crafting elegance, one dress at a time. Where luxury meets personal style.</p>
           </div>
           <div className={styles.footerSection}>
@@ -558,15 +580,16 @@ export default function Home() {
           </div>
           <div className={styles.footerSection}>
             <h4>Contact Info</h4>
-            <p>Email: info@mideyateller.com</p>
+            <p>Email: info@mideatelier.com</p>
             <p>Phone: +2349164638685</p>
             <p>Address: No 1 Fashion Ave, Abeokuta Ogun state</p>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>&copy; 2024 Mideyateller Fashion. All rights reserved.</p>
+          <p>&copy; 2024 MideAtelier Fashion. All rights reserved.</p>
         </div>
       </footer>
     </div>
+    </>
   );
 }
