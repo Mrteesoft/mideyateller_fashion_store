@@ -256,7 +256,6 @@ export default function Home() {
             <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a></li>
             <li><a href="#services" onClick={() => setMobileMenuOpen(false)}>Services</a></li>
             <li><a href="#custom" onClick={() => setMobileMenuOpen(false)}>Custom</a></li>
-            <li><a href="#testimonials" onClick={() => setMobileMenuOpen(false)}>Reviews</a></li>
             <li><a href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
           </ul>
         </div>
@@ -418,27 +417,149 @@ export default function Home() {
 
       {/* SERVICES SECTION */}
       <section id="services" className={styles.services}>
-        <h2>Our Services</h2>
-        <div className={styles.servicesGrid}>
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>👗</div>
-            <h3>Ready-to-Wear</h3>
-            <p>Curated collections of contemporary dresses designed for the modern woman.</p>
+        <div className={styles.servicesContainer}>
+          <div className={styles.servicesHeader}>
+            <h2>Our Premium Services</h2>
+            <p>Discover our comprehensive range of fashion services designed to elevate your style</p>
           </div>
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>✂️</div>
-            <h3>Custom Design</h3>
-            <p>Bespoke creations tailored to your unique style, measurements, and preferences.</p>
-          </div>
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>📏</div>
-            <h3>Alterations</h3>
-            <p>Professional alterations to ensure the perfect fit for any garment.</p>
-          </div>
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>💎</div>
-            <h3>Styling Consultation</h3>
-            <p>Personal styling sessions to help you discover your signature look.</p>
+
+          <div className={styles.servicesGrid}>
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardInner}>
+                <div className={styles.serviceCardFront}>
+                  <div className={styles.serviceIconContainer}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 64 64" fill="none">
+                      <defs>
+                        <linearGradient id="readyToWearGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#c2185b" />
+                          <stop offset="100%" stopColor="#e91e63" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M20 16h24v8l-4 4v20l-8 8-8-8V28l-4-4V16z" fill="url(#readyToWearGradient)" />
+                      <circle cx="32" cy="12" r="4" fill="url(#readyToWearGradient)" />
+                      <path d="M24 24h16M24 32h16M24 40h16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <h3>Ready-to-Wear</h3>
+                  <p>Premium Collections</p>
+                  <div className={styles.serviceArrow}>→</div>
+                </div>
+                <div className={styles.serviceCardBack}>
+                  <h4>Ready-to-Wear Collection</h4>
+                  <ul>
+                    <li>Curated seasonal collections</li>
+                    <li>Contemporary designs</li>
+                    <li>Premium fabric selection</li>
+                    <li>Size range: XS to XXL</li>
+                    <li>Express delivery available</li>
+                  </ul>
+                  <div className={styles.servicePrice}>From ₦25,000</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardInner}>
+                <div className={styles.serviceCardFront}>
+                  <div className={styles.serviceIconContainer}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 64 64" fill="none">
+                      <defs>
+                        <linearGradient id="customGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#8e24aa" />
+                          <stop offset="100%" stopColor="#ab47bc" />
+                        </linearGradient>
+                      </defs>
+                      <path d="M16 20l16-8 16 8v24l-16 8-16-8V20z" fill="url(#customGradient)" />
+                      <path d="M16 20l16 8 16-8M32 28v16" stroke="white" strokeWidth="2" />
+                      <circle cx="24" cy="24" r="2" fill="white" />
+                      <circle cx="40" cy="24" r="2" fill="white" />
+                    </svg>
+                  </div>
+                  <h3>Custom Tailoring</h3>
+                  <p>Bespoke Creations</p>
+                  <div className={styles.serviceArrow}>→</div>
+                </div>
+                <div className={styles.serviceCardBack}>
+                  <h4>Custom Tailoring Service</h4>
+                  <ul>
+                    <li>Personal measurements</li>
+                    <li>Fabric consultation</li>
+                    <li>Design collaboration</li>
+                    <li>3 fitting sessions</li>
+                    <li>Lifetime alterations</li>
+                  </ul>
+                  <div className={styles.servicePrice}>From ₦45,000</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardInner}>
+                <div className={styles.serviceCardFront}>
+                  <div className={styles.serviceIconContainer}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 64 64" fill="none">
+                      <defs>
+                        <linearGradient id="stylingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#1976d2" />
+                          <stop offset="100%" stopColor="#42a5f5" />
+                        </linearGradient>
+                      </defs>
+                      <circle cx="32" cy="32" r="20" fill="url(#stylingGradient)" />
+                      <path d="M24 28h16M24 32h16M24 36h12" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                      <circle cx="32" cy="20" r="6" stroke="white" strokeWidth="2" fill="none" />
+                    </svg>
+                  </div>
+                  <h3>Style Consultation</h3>
+                  <p>Personal Styling</p>
+                  <div className={styles.serviceArrow}>→</div>
+                </div>
+                <div className={styles.serviceCardBack}>
+                  <h4>Style Consultation</h4>
+                  <ul>
+                    <li>Personal style analysis</li>
+                    <li>Wardrobe assessment</li>
+                    <li>Color palette guide</li>
+                    <li>Shopping assistance</li>
+                    <li>Styling tips & tricks</li>
+                  </ul>
+                  <div className={styles.servicePrice}>From ₦15,000</div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceCardInner}>
+                <div className={styles.serviceCardFront}>
+                  <div className={styles.serviceIconContainer}>
+                    <svg className={styles.serviceIcon} viewBox="0 0 64 64" fill="none">
+                      <defs>
+                        <linearGradient id="designGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#f57c00" />
+                          <stop offset="100%" stopColor="#ff9800" />
+                        </linearGradient>
+                      </defs>
+                      <rect x="12" y="12" width="40" height="40" rx="4" fill="url(#designGradient)" />
+                      <path d="M20 20l8 8-8 8M28 36h16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="44" cy="20" r="4" fill="white" />
+                    </svg>
+                  </div>
+                  <h3>Design Services</h3>
+                  <p>Creative Collaboration</p>
+                  <div className={styles.serviceArrow}>→</div>
+                </div>
+                <div className={styles.serviceCardBack}>
+                  <h4>Design Services</h4>
+                  <ul>
+                    <li>Concept development</li>
+                    <li>Technical drawings</li>
+                    <li>Fabric sourcing</li>
+                    <li>Prototype creation</li>
+                    <li>Production guidance</li>
+                  </ul>
+                  <div className={styles.servicePrice}>From ₦35,000</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -466,36 +587,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS SECTION */}
-      <section id="testimonials" className={styles.testimonials}>
-        <h2>What Our Clients Say</h2>
-        <div className={styles.testimonialsGrid}>
-          <div className={styles.testimonialCard}>
-            <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-            <p>"Absolutely stunning! The custom dress exceeded all my expectations. The attention to detail and quality is unmatched."</p>
-            <div className={styles.testimonialAuthor}>
-              <strong>Sarah Johnson</strong>
-              <span>Bride</span>
-            </div>
-          </div>
-          <div className={styles.testimonialCard}>
-            <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-            <p>"Professional service and beautiful designs. I've ordered multiple dresses and each one is perfect. Highly recommend!"</p>
-            <div className={styles.testimonialAuthor}>
-              <strong>Emily Chen</strong>
-              <span>Fashion Enthusiast</span>
-            </div>
-          </div>
-          <div className={styles.testimonialCard}>
-            <div className={styles.stars}>⭐⭐⭐⭐⭐</div>
-            <p>"I got a lot of compliments on my clothes, your hands are really blessed. Thank you for styling me, I couldn't have wished for another brand to trust my dress with, cheers to more"</p>
-            <div className={styles.testimonialAuthor}>
-              <strong>Oluwanifemi Adewakun</strong>
-              <span>Satisfied Customer</span>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* CONTACT SECTION */}
       <section id="contact" className={styles.contact}>

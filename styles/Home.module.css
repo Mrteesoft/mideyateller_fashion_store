@@ -509,78 +509,204 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Services Section */
+/* Modern Services Section */
 .services {
   padding: 120px 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.services h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 4rem;
-  color: #1a1a1a;
-  letter-spacing: -1px;
-}
-
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.serviceCard {
-  background: white;
-  padding: 3rem 2rem;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   position: relative;
   overflow: hidden;
 }
 
-.serviceCard::before {
+.services::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.6s ease;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(194, 24, 91, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(233, 30, 99, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(142, 36, 170, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
-.serviceCard:hover::before {
-  left: 100%;
+.servicesContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.servicesHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.servicesHeader h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.servicesHeader p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  perspective: 1000px;
+}
+
+/* 3D Flip Card Design */
+.serviceCard {
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
 }
 
 .serviceCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: rotateY(180deg);
+}
+
+.serviceCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.serviceCardFront,
+.serviceCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.serviceCardFront {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.serviceCardBack {
+  background: linear-gradient(135deg, rgba(194, 24, 91, 0.95) 0%, rgba(233, 30, 99, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: rotateY(180deg);
+  box-shadow:
+    0 25px 50px rgba(194, 24, 91, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.serviceIconContainer {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
 }
 
 .serviceIcon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  animation: scaleIn 0.6s ease-out;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-.serviceCard h3 {
+.serviceCardFront h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
   letter-spacing: -0.5px;
 }
 
-.serviceCard p {
-  color: #666;
-  line-height: 1.6;
+.serviceCardFront p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.serviceArrow {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.serviceCardBack h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.serviceCardBack ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+.serviceCardBack li {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.serviceCardBack li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.servicePrice {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: auto;
 }
 
 /* Featured Products Section */
@@ -1188,91 +1314,81 @@
   filter: brightness(1.1) contrast(1.15);
 }
 
-/* Testimonials Section */
-.testimonials {
-  padding: 120px 2rem;
-  background: #ffffff;
+/* Modern CSS3 Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.testimonials h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 4rem;
-  color: #1a1a1a;
-  letter-spacing: -1px;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
-.testimonialsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
-.testimonialCard {
-  background: #f8f9fa;
-  padding: 3rem 2rem;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  animation: fadeInUp 0.6s ease-out;
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(194, 24, 91, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(194, 24, 91, 0.6);
+  }
 }
 
-.testimonialCard:nth-child(1) { animation-delay: 0.1s; }
-.testimonialCard:nth-child(2) { animation-delay: 0.2s; }
-.testimonialCard:nth-child(3) { animation-delay: 0.3s; }
+/* Service Card Hover Effects */
+.serviceCard:nth-child(1) .serviceCardFront {
+  animation-delay: 0.1s;
+}
 
-.testimonialCard::before {
+.serviceCard:nth-child(2) .serviceCardFront {
+  animation-delay: 0.2s;
+}
+
+.serviceCard:nth-child(3) .serviceCardFront {
+  animation-delay: 0.3s;
+}
+
+.serviceCard:nth-child(4) .serviceCardFront {
+  animation-delay: 0.4s;
+}
+
+/* Glassmorphism Enhancement */
+.serviceCardFront::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #1a1a1a, #666);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.8s ease;
 }
 
-.testimonialCard:hover::before {
-  transform: scaleX(1);
-}
-
-.testimonialCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.stars {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #ffd700;
-}
-
-.testimonialCard p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #666;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.testimonialAuthor strong {
-  display: block;
-  font-size: 1.1rem;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
-}
-
-.testimonialAuthor span {
-  color: #999;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.serviceCard:hover .serviceCardFront::after {
+  left: 100%;
 }
 
 /* Contact Section */
@@ -1505,6 +1621,29 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
+  .serviceCard {
+    height: 350px;
+  }
+
+  .serviceCardFront,
+  .serviceCardBack {
+    padding: 2rem;
+  }
+
+  .serviceIconContainer {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+  }
+
+  .serviceCardFront h3 {
+    font-size: 1.6rem;
+  }
+
+  .serviceCardBack h4 {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1568,8 +1707,7 @@
     gap: 1.5rem;
   }
 
-  .servicesGrid,
-  .testimonialsGrid {
+  .servicesGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
@@ -1691,7 +1829,6 @@
   .about,
   .services,
   .custom,
-  .testimonials,
   .contact {
     padding: 60px 1rem;
   }
@@ -1792,16 +1929,37 @@
     padding: 2rem 1.5rem;
   }
 
-  .servicesGrid,
-  .testimonialsGrid {
+  .servicesGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .serviceCard,
-  .testimonialCard {
-    padding: 2rem 1.5rem;
-    text-align: center;
+  .serviceCard {
+    height: 320px;
+  }
+
+  .serviceCardFront,
+  .serviceCardBack {
+    padding: 1.5rem;
+  }
+
+  .serviceIconContainer {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .serviceCardFront h3 {
+    font-size: 1.4rem;
+  }
+
+  .serviceCardBack h4 {
+    font-size: 1.2rem;
+  }
+
+  .serviceCardBack li {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
   }
 
   .contactForm {
@@ -1874,7 +2032,6 @@
   .about,
   .services,
   .custom,
-  .testimonials,
   .contact {
     padding: 40px 0.5rem;
   }
@@ -1966,19 +2123,37 @@
     font-size: 0.9rem;
   }
 
-  .serviceCard,
-  .testimonialCard {
-    padding: 1.5rem 1rem;
+  .serviceCard {
+    height: 300px;
   }
 
-  .serviceCard h3,
-  .testimonialCard h4 {
+  .serviceCardFront,
+  .serviceCardBack {
+    padding: 1.2rem;
+  }
+
+  .serviceIconContainer {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.8rem;
+  }
+
+  .serviceCardFront h3 {
+    font-size: 1.2rem;
+  }
+
+  .serviceCardBack h4 {
     font-size: 1.1rem;
   }
 
-  .serviceCard p,
-  .testimonialCard p {
+  .serviceCardBack li {
     font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .servicePrice {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 
   .customButton {
